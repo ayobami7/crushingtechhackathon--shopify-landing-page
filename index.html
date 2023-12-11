@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>Shopify</title>
+</head>
+<body>
+    <section class="header"> 
+        <div class="nav">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg" alt="shopify-logo" class="logo">
+                </a>
+            </div>  
+
+            <div class="search-bar">
+                <form action="/search" method="get" >
+                    <label for="searchQuery" class="sr-only"></label>
+                    <i class="search-icon"><img src="https://crushingit.tech/hackathon-assets/icon-search.svg" alt=""></i>
+                    <input type="text" id="searchQuery" name="query" placeholder="Search..." class="search-container" >
+                </form>
+            </div>
+            
+            <div class="tag">
+                <div class="bell-notif">
+                    <img src="https://crushingit.tech/hackathon-assets/icon-bell.svg" alt="notification">
+                </div>
+                
+                <div class="modal" id="myModal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <p>This is a notification!</p>
+                    </div>
+                </div>
+
+                <div class="store-name">
+                    <p>Davii Collections <button>DC</button></p> 
+                    <!-- <a href=""><button>DC</button></a> -->
+                </div>        
+            </div>      
+        </div>
+    </section>
+
+    <div class="callout">
+        <p>Extend your trial for $1/month for 3 months on select plans</p>
+        <div class="callout__btn">
+            <a href="admin.shopify.com">
+                <button>Select a plan</button>
+            </a>
+            <img src="https://crushingit.tech/hackathon-assets/icon-cross.svg" alt="close">
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="setup-guide">
+            <div>
+                <p>Setup guide</p>
+                <p>Use this personalized guide to get your store up and running</p>
+            </div>
+            
+            <button class="dropdown-btns" onclick="toggleSetupSteps()">
+                <span class="open-btn" id="openBtn">
+                    <img src="https://crushingit.tech/hackathon-assets/icon-arrow-down.svg" alt="open-dropdown">
+                </span>
+                <span class="close-btn" id="closeBtn">
+                    <img src="https://crushingit.tech/hackathon-assets/icon-arrow-up.svg" alt="close-dropdown">
+                </span>
+            </button>
+        </div>
+        <div class="setup-steps" id="setupSteps">
+            <div class="step" id="step-1" onclick="toggleStepContent('step-1-content')">
+                <div class="">
+                    <img src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg" alt="loading-btn">
+                    <p>Customize your store</p>
+                </div>
+                <div class="step-content" id="step-1-content">
+                    <p>Choose a theme and add your logo, colors, and images to reflect your brand.<a href="">Learn more</a></p>
+                    <a href="#">
+                        <button>Customize theme</button>
+                    </a>
+                    <span>
+                        <img src="https://crushingit.tech/hackathon-assets/customise-store.png" alt="">
+                    </span>      
+                </div>
+            </div>
+            <div class="step" id="step-2" onclick="toggleStepContent('step-2-content')">
+                <div class="">
+                    <img src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg" alt="loading-btn">
+                    <p>Add your first product</p>
+                </div>
+                <div class="step-content" id="step-2-content">
+                    <p>Write a description, add photos, and set pricing for the products you plan to sell.<a href="">Learn more</a></p>
+                    <a href="">
+                        <button>Add product</button>
+                    </a>
+                    <a href="">
+                        <button>Import product</button>
+                    </a>
+                    <span>
+                        <img src="https://crushingit.tech/hackathon-assets/product.png" alt="">
+                    </span>      
+                </div>
+            </div>
+            <div class="step" id="step-3" onclick="toggleStepContent('step-3-content')">
+                <div class="">
+                    <img src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg" alt="loading-btn">
+                    <p>Custom your domain</p>
+                </div>
+                <div class="step-content" id="step-3-content">
+                    <p>Your current domain is 222219.myshopify.com but you can add a custom domain to help customers find your online store. 
+                        <a href="">Learn more</a></p>
+                    <a href="">
+                        <button>Add domain</button>
+                    </a>
+                    <span>
+                        <img src="https://crushingit.tech/hackathon-assets/website.png" alt="">
+                    </span>      
+                </div>
+            </div>
+            <div class="step" id="step-4" onclick="toggleStepContent('step-4-content')">
+                <div class="">
+                    <img src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg" alt="loading-btn">
+                    <p>Name your store</p>
+                </div>
+                <div class="step-content" id="step-4-content">
+                    <p>Your temporary store name is currently Davii collections. The store name appears in your
+                         admin and your online store. <a href="">Learn more</a></p>
+                    <a href="">
+                        <button>Name store</button>
+                    </a>
+                    <span>
+                        <img src="https://crushingit.tech/hackathon-assets/name-store.png" alt="">
+                    </span>      
+                </div>
+            </div>
+            <div class="step" id="step-5" onclick="toggleStepContent('step-5-content')">
+                <div class="">
+                    <img src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg" alt="loading-btn">
+                    <p>Set up a payment provider</p>
+                </div>
+                <div class="step-content" id="step-5-content">
+                    <p>Choose a payment provider to start accepting payments. You’ll need to create an account with the payment provider 
+                        and set it up with your Shopify store. Learn more<a href="">Learn more</a></p>
+                    <a href="">
+                        <button>Set up payment</button>
+                    </a>
+                    <span>
+                        <img src="https://crushingit.tech/hackathon-assets/payment.png" alt="">
+                    </span>      
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="app.js"></script>
+
+</html>

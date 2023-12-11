@@ -1,0 +1,201 @@
+/* Reset default margin, padding, and box-sizing for all elements */
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* color: var(--font-dark, var(--grey-g-200, #303030)); */
+
+    /* Text-12/regular */
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+  
+  
+    line-height: 130%; /* 15.6px */
+}
+
+/* var(--text-red) */
+
+/* Set base styles for the body */
+body {
+    font-size: 12px; 
+    /* color: #616161; */
+    background-color: #f1f1f1;
+}
+
+/* Header styles */
+.header {
+    background-color: #1C181D;
+    padding: 10px;
+}
+
+/* Navigation styles */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*  search bar */
+.search-bar {
+    text-align: center; /* Center-align the search bar content */
+    display: flex;
+    position: relative;
+}
+
+.search-container {
+    /* position:relative; */
+    display: flex; 
+    width: 480px;        
+    height: 32px;
+    padding: 8px;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--stroke-s-200, #616161);
+    background: #303030 ; 
+    color: #B5B5B5;
+    /* background-image: transparent url("https://crushingit.tech/hackathon-assets/icon-search.svg"); */
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    fill: #B5B5B5;
+}
+
+input{
+    left: 35px;
+}
+    
+/*  */
+.tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Added alignment for responsiveness */
+}
+
+.bell-notif {
+    margin: 0 10px;
+    display: inline-flex;
+    padding: 6px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: #303030;
+    /* color: #E3E3E3; */
+    /* position: relative; */
+}
+
+.bell-notif img {
+    /* position: absolute; */
+    /* z-index: 1; */
+    fill: #E3E3E3;
+}
+
+.store-name{
+    display: flex;
+    padding: 6px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background:  #303030;
+    color: #E3E3E3
+}
+
+
+
+/* Setup trial callout styles */
+.callout {
+    margin: 20px auto; 
+    padding: 10px;
+    width: 50%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1C181D;
+    align-self: center;
+    position: relative;
+    border-radius: 5px;
+}
+
+.callout p {
+    color: #E3E3E3;
+font-family: Inter;
+font-size: 13px;
+font-style: normal;
+font-weight: 500;
+line-height: 18.2px;
+}
+
+.callout__btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.callout img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Main body container styles */
+.container {
+    background-color: #FFFFFF;
+    color: #616161;
+    width: 50%; 
+    margin: 0 auto;
+    padding: 10px; 
+    border-radius: 5px;
+}
+
+/* Setup guide styles */
+.setup-guide {
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap for responsiveness */
+    justify-content: space-between;
+}
+
+/* Setup steps styles */
+.setup-steps {
+    display: none;
+}
+
+.setup-steps.show {
+    display: block;
+}
+
+/* Button styles for setup steps */
+.open-btn, .close-btn {
+    margin: 5px; 
+    padding: 8px 15px; 
+}
+
+.open-btn.show {
+    display: none;
+}
+
+.close-btn.show {
+    display: inline;
+}
+
+.close-btn {
+    display: none;
+}
+
+/* Step content styles */
+.step-content {
+    display: none;
+}
+
+.step-content.active {
+    display: block;
+    justify-content: space-between;
+}
